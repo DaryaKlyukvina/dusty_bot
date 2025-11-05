@@ -12,9 +12,9 @@ import os
 # Load environment variables from .env file
 load_dotenv()  
 
-CHANNEL_ID = os.getenv('CHANNEL_ID')
-ADMINS = os.getenv('ADMINS')
-API_TOKEN = os.getenv('API_TOKEN')
+API_TOKEN = os.getenv("API_TOKEN")
+CHANNEL_ID = int(os.getenv("CHANNEL_ID"))
+ADMINS = list(map(int, os.getenv("ADMINS").split(",")))
 
 bot = Bot(token=API_TOKEN)
 dp = Dispatcher()
