@@ -16,6 +16,8 @@ API_TOKEN = os.getenv("API_TOKEN")
 CHANNEL_ID = int(os.getenv("CHANNEL_ID"))
 ADMINS = list(map(int, os.getenv("ADMINS").split(",")))
 
+print(f"Loaded config:\nCHANNEL_ID={CHANNEL_ID}\nADMINS={ADMINS}\nTOKEN={bool(API_TOKEN)}")
+
 bot = Bot(token=API_TOKEN)
 dp = Dispatcher()
 
