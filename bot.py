@@ -53,7 +53,7 @@ async def handle_admin_text(message: types.Message):
         await message.answer("✅ Сообщение отправлено пользователю")
 
 # ================== Пользовательские сообщения ==================
-@dp.message(F.text | F.photo | F.video | F.document | F.audio)
+@dp.message
 async def proposal_handler(message: types.Message):
     # Если это админ и он сейчас отвечает/редактирует -> пропускаем
     if message.from_user.id in ADMINS and message.from_user.id in pending_actions:
